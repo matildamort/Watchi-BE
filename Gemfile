@@ -14,7 +14,7 @@ gem 'puma', '~> 5.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -31,6 +31,7 @@ group :development, :test do
   gem "rspec-rails", "~> 5.1"
   gem "factory_bot_rails", "~> 6.2"
   gem 'knock'
+  gem "database_cleaner", "~> 2.0"
 end
 
 group :development do
@@ -42,8 +43,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
-gem "database_cleaner", "~> 2.0"
 gem 'simple_form'
 gem 'aws-sdk-s3'
 gem 'bootstrap'
