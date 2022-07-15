@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_07_15_040531) do
   create_table "shows", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.boolean "crunchroll"
+    t.boolean "crunchyroll"
     t.boolean "netflix"
     t.boolean "funimation"
     t.integer "episodes"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_07_15_040531) do
     t.date "enddate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "review_id", null: false
+    t.bigint "review_id"
     t.string "day"
     t.index ["review_id"], name: "index_shows_on_review_id"
   end

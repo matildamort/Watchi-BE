@@ -1,11 +1,11 @@
 class WatchlistsController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_watchlist, only: [:show, :update, :destroy]
+  # before_action :check_ownership, only: [:show, :update, :destroy]
 
   # GET /watchlists
   def index
     @watchlists = Watchlist.all
-
     render json: @watchlists
   end
 
@@ -37,6 +37,12 @@ class WatchlistsController < ApplicationController
   # DELETE /watchlists/1
   def destroy
     @watchlist.destroy
+  end
+
+  def check_ownership
+   if current_user.id != @watchlist.user.id
+    render json: {error: "You are not authorized to make changes to this watchlist"}, status: :unauthorized
+   end
   end
 
   private

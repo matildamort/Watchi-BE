@@ -3,7 +3,7 @@ class CreateShows < ActiveRecord::Migration[6.1]
     create_table :shows do |t|
       t.string :title
       t.string :description
-      t.boolean :crunchroll
+      t.boolean :crunchyroll
       t.boolean :netflix
       t.boolean :funimation
       t.integer :episodes

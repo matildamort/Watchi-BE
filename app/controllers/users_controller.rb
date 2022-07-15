@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-# before_action :user_params, only: [:create]
  
 #create new user
 def create
@@ -29,9 +27,17 @@ end
     end
     
 
-    # def signout
-    #     render json: {message: "You have been signed out"}, status: :ok
-    # end
+    def destroy 
+        @user = User.find(params[:id])
+        @user.destroy
+        render json: {message: "User deleted"}, status: :ok
+    end
+
+    def signout
+        render json: {message: "You have been signed out"}, status: :ok
+    end
+
+ 
 
     private
     def user_params
