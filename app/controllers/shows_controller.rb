@@ -1,5 +1,6 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :update, :destroy]
+  before_action :is_admin, only: [:create, :update, :destroy]
 
   # GET /shows
   def index
@@ -49,3 +50,13 @@ class ShowsController < ApplicationController
       params.require(:show).permit(:title, :description, :crunchroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id)
     end
 end
+ private
+
+ #is the current user and admin allowed
+  def is_admin
+    if current_user.admin
+      return true
+    else
+      render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
+    end
+  end

@@ -1,11 +1,11 @@
 class WatchlistsController < ApplicationController
   # before_action :authenticate_user
   before_action :set_watchlist, only: [:show, :update, :destroy]
-  # before_action :check_ownership, only: [:show, :update, :destroy]
 
   # GET /watchlists
   def index
     @watchlists = Watchlist.all
+
     render json: @watchlists
   end
 
@@ -34,16 +34,30 @@ class WatchlistsController < ApplicationController
     end
   end
 
+
+  #add additional shows to watchlist
+  def add
+    @watchlist = Watchlist.find(params[:id])
+    @show = Show.find(params[:show_id])
+    @watchlist.shows << @show
+    render json: @watchlist
+  end
+
+  #Removes a show from a watchlist
+  def remove
+    @watchlist = Watchlist.find(params[:id])
+    @show = Show.find(params[:show_id])
+    @watchlist.shows.delete(@show)
+    render json: @watchlist
+  end
+
+
   # DELETE /watchlists/1
   def destroy
     @watchlist.destroy
   end
 
-  def check_ownership
-   if current_user.id != @watchlist.user.id
-    render json: {error: "You are not authorized to make changes to this watchlist"}, status: :unauthorized
-   end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
