@@ -1,17 +1,20 @@
 class WatchlistsController < ApplicationController
   # before_action :authenticate_user
   before_action :set_watchlist, only: [:show, :update, :destroy]
+  before_action :is_current_user, only: [:show, :update, :remove, :add]
 
   # GET /watchlists
-  def index
-    @watchlists = Watchlist.all
-
-    render json: @watchlists
-  end
+  # def index - - Not required for functionality of this application
+  #   @watchlists = Watchlist.all
+  #   render json: @watchlists
+  # end
 
   # GET /watchlists/1
+
+  #only show watchlists that belong to the current user
+ 
   def show
-    render json: @watchlist
+    render json: @watchlist.shows.all
   end
 
   # POST /watchlists
@@ -26,13 +29,13 @@ class WatchlistsController < ApplicationController
   end
 
   # PATCH/PUT /watchlists/1
-  def update
-    if @watchlist.update(watchlist_params)
-      render json: @watchlist
-    else
-      render json: @watchlist.errors, status: :unprocessable_entity
-    end
-  end
+  # def update 
+  #   if @watchlist.update(watchlist_params)
+  #     render json: @watchlist
+  #   else
+  #     render json: @watchlist.errors, status: :unprocessable_entity
+  #   end
+  # end
 
 
   #add additional shows to watchlist
@@ -69,4 +72,13 @@ class WatchlistsController < ApplicationController
     def watchlist_params
       params.require(:watchlist).permit(:user_id, :show_id)
     end
+
+    def is_current_user
+      if @watchlist.user_id == current_user.id
+        return true
+      else
+        render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
+      end
+
+
 end
