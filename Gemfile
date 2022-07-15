@@ -15,7 +15,7 @@ gem 'puma', '~> 5.0'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'knock'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -30,7 +30,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 5.1"
   gem "factory_bot_rails", "~> 6.2"
-  gem 'knock'
   gem "database_cleaner", "~> 2.0"
 end
 
