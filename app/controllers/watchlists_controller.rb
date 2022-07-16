@@ -4,10 +4,10 @@ class WatchlistsController < ApplicationController
   before_action :is_current_user, only: [:show, :update, :remove, :add]
 
   # GET /watchlists
-  # def index - - Not required for functionality of this application
-  #   @watchlists = Watchlist.all
-  #   render json: @watchlists
-  # end
+  def index 
+    @watchlists = Watchlist.all
+    render json: @watchlists
+  end
 
   # GET /watchlists/1
 
