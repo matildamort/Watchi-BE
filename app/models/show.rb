@@ -1,5 +1,6 @@
 class Show < ApplicationRecord
     has_many :reviews
+    has_one_attached :image
 
 #     def transform_show
 #         return { 

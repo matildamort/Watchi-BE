@@ -47,9 +47,9 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:title, :description, :crunchroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id)
+      params.require(:show).permit(:title, :description, :crunchroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image) 
     end
-end
+
  private
 
  #is the current user and admin allowed
@@ -60,3 +60,4 @@ end
       render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
     end
   end
+end
