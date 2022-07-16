@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
 if User.count == 0
     User.create(username: 'MatildaWatcher', firstname: "matilda", lastname: "Morton", email: "matilda.morton@bigpond.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'CameronWatcher', firstname: "Cam", lastname: "jones", email: "iamcrjones@gmail.com", password: "123456", password_confirmation: "123456")
@@ -22,14 +24,9 @@ if Show.count == 0
 end
 
 
-
-if Watchlist.count == 0
-    Watchlist.create(user_id: 1, show_id: 1)
-    Watchlist.create(user_id: 2, show_id: 1)
-    Watchlist.create(user_id: 3, show_id: 1)
-    Watchlist.create(user_id: 4, show_id: 2)
-end
-
+Show.all.each do |show|
+    show.image.attach(io: File.open(Rails.root.join('app/assets/images/dbz.jpeg')), filename: 'dbz.jpeg', content_type: 'image/jpeg')
+ end
 
 if Review.count == 0
     Review.create(message: "This is a great show", rating: 5, user_id: 1, show_id: 1)
@@ -39,4 +36,11 @@ if Review.count == 0
     Review.create(message: "This is a great show", rating: 5, user_id: 4, show_id: 2)
     Review.create(message: "This is a great show", rating: 5, user_id: 4, show_id: 3)
     Review.create(message: "This is a great show", rating: 5, user_id: 4, show_id: 2)
+end
+
+if Watchlist.count == 0
+    Watchlist.create(user_id: 1, show_id: 1)
+    Watchlist.create(user_id: 2, show_id: 1)
+    Watchlist.create(user_id: 3, show_id: 1)
+    Watchlist.create(user_id: 4, show_id: 2)
 end
