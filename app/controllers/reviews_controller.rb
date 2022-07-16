@@ -26,14 +26,14 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # # PATCH/PUT /reviews/1 - Feature not being used in this version of the app
-  # def update
-  #   if @review.update(review_params)
-  #     render json: @review
-  #   else
-  #     render json: @review.errors, status: :unprocessable_entity
-  #   end
-  # end
+  # PATCH/PUT /reviews/1 - Feature not being used in this version of the app
+  def update
+    if @review.update(review_params)
+      render json: @review
+    else
+      render json: @review.errors, status: :unprocessable_entity
+    end
+  end
 
   # DELETE /reviews/1
   def destroy
@@ -57,4 +57,7 @@ class ReviewsController < ApplicationController
       else
         render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
       end
+    end
+  
+end
 end
