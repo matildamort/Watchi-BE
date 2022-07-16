@@ -79,6 +79,6 @@ class WatchlistsController < ApplicationController
       else
         render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
       end
-
+    end
 
 end
