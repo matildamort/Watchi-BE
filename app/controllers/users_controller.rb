@@ -16,6 +16,10 @@ def create
     end
 end
 
+def index
+    @users = User.all
+    render json: @users
+end
 
 #Finds the current user to be able to have user details displayed in the 'my account' section. 
     def current_user
@@ -42,11 +46,9 @@ end
         render json: {message: "User deleted"}, status: :ok
     end
 
-    def signout
-        render json: {message: "You have been signed out"}, status: :ok
-    end
-
- 
+    # def signout
+    #     render json: {message: "You have been signed out"}, status: :ok
+    # end
 
     private
     def user_params

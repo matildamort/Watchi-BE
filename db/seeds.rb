@@ -14,7 +14,7 @@ if User.count == 0
     User.create(username: 'CameronWatcher', firstname: "Cam", lastname: "jones", email: "iamcrjones@gmail.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'BenWatcher', firstname: "Ben", lastname: "Morton", email: "benamorton@bigpond.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'OscarWatcher', firstname: "Oscar", lastname: "Morton", email: "ObiWon@bigpond.com", password: "123456", password_confirmation: "123456")
-    User.create(username: 'admin', firstname:'admin', lastname:'admin', email:'admin@bigpond.com', password:'12346')
+    User.create(username: 'admin', firstname:'admin', lastname:'admin', email:'admin@bigpond.com', password:'123456', admin: true)
 end
 
 if Show.count == 0
