@@ -57,13 +57,9 @@ end
 
     #prevent user from action if not admin
     def is_admin
-        if current_user.nil? || current_user.is_at_least?(:manager) == false
+        if !current_user.admin
             render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
-          redirect_to root_path
-          return true
+            redirect_back(fallback_location: root_path)
         end
-        false
-      end
-
-      
+    end
 end
