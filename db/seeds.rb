@@ -15,7 +15,13 @@ if User.count == 0
     User.create(username: 'BenWatcher', firstname: "Ben", lastname: "Morton", email: "benamorton@bigpond.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'OscarWatcher', firstname: "Oscar", lastname: "Morton", email: "ObiWon@bigpond.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'admin', firstname:'admin', lastname:'admin', email:'admin@bigpond.com', password:'123456', password_confirmation: '123456', admin: true)
+
 end
+
+
+Show.all.each do |show|
+    show.image.attach(io: File.open(Rails.root.join('app/assets/images/dbz.jpeg')), filename: 'dbz.jpeg', content_type: 'image/jpeg')
+ end
 
 if Show.count == 0
     Show.create(title: "DBZ", description: "Greatest Show ever", crunchyroll: true, netflix: false, funimation: true, episodes: 100, airdate: "01/01/2022", enddate: "01/01/2023", day: "thursday")
@@ -25,9 +31,7 @@ if Show.count == 0
 end
 
 
-Show.all.each do |show|
-    show.image.attach(io: File.open(Rails.root.join('app/assets/images/dbz.jpeg')), filename: 'dbz.jpeg', content_type: 'image/jpeg')
- end
+
 
 if Review.count == 0
     Review.create(message: "This is a great show", rating: 5, user_id: 1, show_id: 1)
