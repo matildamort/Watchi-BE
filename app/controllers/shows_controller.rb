@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :update, :destroy]
-  before_action :is_admin, only: [:create, :update, :destroy]
+  # before_action :is_admin, only: [:create, :update, :destroy]
 
   # GET /shows
   def index
@@ -45,9 +45,14 @@ class ShowsController < ApplicationController
       @show = Show.find(params[:id])
     end
 
+    def latest_show
+      @show = Show.last
+      render json: PostSerializer.new(@show).serializable_hash[:data][:attributes]
+    end
+
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:title, :description, :crunchroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image) 
+      params.require(:show).permit(:title, :description, :crunchyroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image) 
     end
 
  private
