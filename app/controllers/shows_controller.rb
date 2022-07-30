@@ -61,7 +61,6 @@ class ShowsController < ApplicationController
  def is_admin
     if !current_user.admin
         render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
-        redirect_back(fallback_location: root_path)
     end
   end
 end
