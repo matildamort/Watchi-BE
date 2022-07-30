@@ -6,7 +6,7 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.all
 
-    render json: @shows
+    render json: ShowSerializer.new(@shows).serializable_hash[:data]
   end
 
   # GET /shows/1
@@ -16,7 +16,7 @@ class ShowsController < ApplicationController
 
   # POST /shows
   def create
-    @show = Show.new(show_params)
+    @show = Show.create(show_params)
 
     if @show.save
       render json: @show, status: :created, location: @show
@@ -52,7 +52,7 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:title, :description, :crunchyroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday) 
+      params.permit(:title, :description, :crunchyroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :picture, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
     end
 
  private

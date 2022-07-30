@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_032756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "review_id"
+    t.string "day"
     t.boolean "monday"
     t.boolean "tuesday"
     t.boolean "wednesday"
