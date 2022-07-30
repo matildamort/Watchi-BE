@@ -1,27 +1,8 @@
 class Show < ApplicationRecord
     has_many :reviews
-    has_one_attached :image
+    has_one_attached :picture
 
-    def image_url
-        Rails.application.routes.url_helpers.url_for(image) if image.attached?
+    def picture_url
+        Rails.application.routes.url_helpers.url_for(picture) if picture.attached?
     end
-
-
-#     def transform_show
-#         return { 
-            
-#             id: self.id,
-#             title: self.title,
-#             description: self.description,
-#             crunchroll: self.crunchroll,
-#             netflix: self.netflix,
-#             funimation: self.funimation,
-#             episodes: self.episodes,
-#             airdate: self.airdate,
-#             enddate: self.enddate,
-#             reviews: self.reviews.map { |review| review.transform_review }
-#          }
-# end
-
-
 end
