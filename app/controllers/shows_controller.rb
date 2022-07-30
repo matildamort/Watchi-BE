@@ -52,7 +52,7 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:title, :description, :crunchyroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday) 
+      params.require(:show).permit(:title, :description, :crunchyroll, :netflix, :funimation, :episodes, :airdate, :enddate, :review_id, :image, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday) 
     end
 
  private
