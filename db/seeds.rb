@@ -42,9 +42,18 @@ if Review.count == 0
     Review.create(message: "This is a great show", rating: 5, user_id: 4, show_id: 2)
 end
 
-if Watchlist.count == 0
-    Watchlist.create(user_id: 1, show_id: 1)
-    Watchlist.create(user_id: 2, show_id: 1)
-    Watchlist.create(user_id: 3, show_id: 1)
-    Watchlist.create(user_id: 4, show_id: 2)
-end
+
+# if Watchlist.count == 0
+#     Watchlist.create(user_id: 1, watchshow_id: 1)
+#     Watchlist.create(user_id: 2, watchshow_id: 1)
+#     Watchlist.create(user_id: 3, watchshow_id: 1)
+#     Watchlist.create(user_id: 4, watchshow_id: 1)
+# end
+
+# if Watchshow.count == 0
+#     Watchshow.create(show_id: 1, watchlist_id: 1)
+#     Watchshow.create(show_id: 1, watchlist_id: 2)
+#     Watchshow.create(show_id: 1, watchlist_id: 3)
+# end
+
+
