@@ -36,7 +36,6 @@ class ShowsController < ApplicationController
   # DELETE /shows/1
   def destroy
     @show.destroy
-    @show.reviews.destroy_all
   end
 
   private
