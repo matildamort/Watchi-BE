@@ -1,5 +1,6 @@
 class Show < ApplicationRecord
     has_many :reviews, dependent: :destroy
+    belongs_to :watchlist, dependent: :destroy
     has_one_attached :picture
 
     def picture_url

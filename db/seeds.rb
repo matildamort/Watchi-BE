@@ -8,7 +8,6 @@
 
 
 
-
 if User.count == 0
     User.create(username: 'MatildaWatcher', firstname: "matilda", lastname: "Morton", email: "matilda.morton@bigpond.com", password: "123456", password_confirmation: "123456")
     User.create(username: 'CameronWatcher', firstname: "Cam", lastname: "jones", email: "iamcrjones@gmail.com", password: "123456", password_confirmation: "123456")
