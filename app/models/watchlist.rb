@@ -1,4 +1,4 @@
 class Watchlist < ApplicationRecord
   belongs_to :user
-  has_many :shows
+  has_many :shows, dependent: :destroy
 end
