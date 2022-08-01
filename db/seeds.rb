@@ -18,15 +18,15 @@ if User.count == 0
 end
 
 
-Show.all.each do |show|
-    show.image.attach(io: File.open(Rails.root.join('app/assets/images/dbz.jpeg')), filename: 'dbz.jpeg', content_type: 'image/jpeg')
- end
+# Show.all.each do |show|
+#     show.image.attach(io: File.open(Rails.root.join('app/assets/images/dbz.jpeg')), filename: 'dbz.jpeg', content_type: 'image/jpeg')
+#  end
 
 if Show.count == 0
-    Show.create(title: "DBZ", description: "Greatest Show ever", crunchyroll: true, netflix: false, funimation: true, episodes: 100, airdate: "01/01/2022", enddate: "01/01/2023", day: "thursday")
-    Show.create(title: "Pokemon", description: "Greatest Show ever", crunchyroll: true, netflix: true, funimation: true, episodes: 6, airdate: "01/01/2020", enddate: "01/01/2024", day: "thursday")
-    Show.create(title: "OnePiece", description: "Greatest Show ever", crunchyroll: true, netflix: true, funimation: true, episodes: 60, airdate: "01/01/2020", enddate: "01/01/2024", day: "thursday")
-    Show.create(title: "DemonSlayer", description: "Greatest Show ever", crunchyroll: false, netflix: true, funimation: false, episodes: 3, airdate: "01/01/2020", enddate: "01/01/2024", day: "thursday")
+    Show.create(title: "DBZ", description: "Greatest Show ever", crunchyroll: true, netflix: false, funimation: true, episodes: 100, airdate: "01/01/2022", enddate: "01/01/2023")
+    Show.create(title: "Pokemon", description: "Greatest Show ever", crunchyroll: true, netflix: true, funimation: true, episodes: 6, airdate: "01/01/2020", enddate: "01/01/2024")
+    Show.create(title: "OnePiece", description: "Greatest Show ever", crunchyroll: true, netflix: true, funimation: true, episodes: 60, airdate: "01/01/2020", enddate: "01/01/2024")
+    Show.create(title: "DemonSlayer", description: "Greatest Show ever", crunchyroll: false, netflix: true, funimation: false, episodes: 3, airdate: "01/01/2020", enddate: "01/01/2024")
 end
 
 

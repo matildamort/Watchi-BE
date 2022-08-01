@@ -17,7 +17,6 @@ class ShowsController < ApplicationController
   # POST /shows
   def create
     @show = Show.create(show_params)
-
     if @show.save
       render json: @show, status: :created, location: @show
     else
@@ -37,6 +36,7 @@ class ShowsController < ApplicationController
   # DELETE /shows/1
   def destroy
     @show.destroy
+    @show.reviews.destroy_all
   end
 
   private
