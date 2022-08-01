@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
 
   # GET /shows/1
   def show
-    render json: @show
+    render json: ShowSerializer.new(@show).serializable_hash[:data]
   end
 
   # POST /shows
