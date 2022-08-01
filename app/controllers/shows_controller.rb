@@ -35,6 +35,17 @@ class ShowsController < ApplicationController
 
   # DELETE /shows/1
   def destroy
+    @show = Show.find(params[:id])
+    @watchlists = Watchlist.all
+    @watchlists.each do |watchlist|
+      watchlist.shows.delete(@show)
+    end
+    @show = Show.find(params[:id])
+    @show.destroy
+  end
+
+  def destroy
+    @show = Show.find(params[:id])
     @show.destroy
   end
 

@@ -1,20 +1,16 @@
 class WatchlistsController < ApplicationController
-  # before_action :authenticate_user
   before_action :set_watchlist, only: [:show, :update, :destroy]
-  before_action :is_current_user, only: [:show, :update, :remove, :add]
 
   # GET /watchlists
-  def index 
+  def index
     @watchlists = Watchlist.all
+
     render json: @watchlists
   end
 
   # GET /watchlists/1
-
-  #only show watchlists that belong to the current user
- 
   def show
-    render json: @watchlist.shows.all
+    render json: @watchlist
   end
 
   # POST /watchlists
@@ -29,37 +25,34 @@ class WatchlistsController < ApplicationController
   end
 
   # PATCH/PUT /watchlists/1
-  # def update 
-  #   if @watchlist.update(watchlist_params)
-  #     render json: @watchlist
-  #   else
-  #     render json: @watchlist.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-
-  #add additional shows to watchlist
-  def add
-    @watchlist = Watchlist.find(params[:id])
-    @show = Show.find(params[:show_id])
-    @watchlist.shows << @show
-    render json: @watchlist
+  def update
+    if @watchlist.update(watchlist_params)
+      render json: @watchlist
+    else
+      render json: @watchlist.errors, status: :unprocessable_entity
+    end
   end
-
-  #Removes a show from a watchlist
-  def remove
-    @watchlist = Watchlist.find(params[:id])
-    @show = Show.find(params[:show_id])
-    @watchlist.shows.delete(@show)
-    render json: @watchlist
-  end
-
 
   # DELETE /watchlists/1
   def destroy
     @watchlist.destroy
   end
 
+
+  def add_watchshow
+    @watchlist = Watchlist.find(params[:id])
+    @watchshow = Watchshow.find(params[:watchshow_id])
+    @watchlist.watchshows << @watchshow
+    render json: @watchlist
+  end
+
+  def remove_watchshow
+    @watchlist = Watchlist.find(params[:id])
+    @watchshow = Watchshow.find(params[:watchshow_id])
+    @watchlist.watchshows.delete(@watchshow)
+    render json: @watchlist
+  end
+  
 
 
   private
@@ -70,15 +63,6 @@ class WatchlistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def watchlist_params
-      params.require(:watchlist).permit(:user_id, :show_id)
+      params.require(:watchlist).permit(:user_id)
     end
-
-    def is_current_user
-      if @watchlist.user_id == current_user.id
-        return true
-      else
-        render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
-      end
-    end
-
 end
