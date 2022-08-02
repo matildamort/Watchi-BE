@@ -32,7 +32,7 @@ end
         if @user && @user.authenticate(params[:password])
             auth_token = Knock::AuthToken.new payload: {sub: @user.id}
             print auth_token
-            render json: {username: @user.username, jwt: auth_token.token, id: @user.id, admin: @user.admin}, status: 200
+            render json: {username: @user.username, jwt: auth_token.token, user_id: @user.id, admin: @user.admin}, status: 200
 
         else
             render json: {error: "Invalid email or password"}, status: :unauthorized
