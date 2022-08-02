@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
   before_action :set_review, only: [:show, :update, :destroy]
-  before_action :is_admin, only: [:destroy]
+  before_action :auth_check, only: [:destroy]
 
   # GET /reviews
   def index
@@ -51,8 +51,8 @@ class ReviewsController < ApplicationController
       params.permit(:message, :rating, :user_id, :show_id)
     end
 
-    def is_admin
-      if current_user.admin
+    def auth_check
+      if current_user.admin or current_user.id == params[:user_id]
         return true
       else
         render json: {error: "You are not authorized to perform this action"}, status: :unauthorized

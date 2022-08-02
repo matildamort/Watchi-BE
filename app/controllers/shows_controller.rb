@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :update, :destroy]
-  # before_action :is_admin, only: [:create, :update, :destroy]
+  before_action :is_admin, only: [:create, :update, :destroy]
 
   # GET /shows
   def index
