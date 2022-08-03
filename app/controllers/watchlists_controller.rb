@@ -15,7 +15,7 @@ class WatchlistsController < ApplicationController
 
   # POST /watchlists
   def create
-    @watchlist = Watchlist.new(watchlist_params)
+    @watchlist = Watchlist.create(watchlist_params)
 
     if @watchlist.save
       render json: @watchlist, status: :created, location: @watchlist
@@ -38,6 +38,10 @@ class WatchlistsController < ApplicationController
     @watchlist.destroy
   end
 
+  def getListID
+    @list = Watchlist.find_by_user_id(current_user.id)
+    render json: @list.id
+  end
 
   def add_watchshow
     @watchlist = Watchlist.find(params[:id])
@@ -63,6 +67,6 @@ class WatchlistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def watchlist_params
-      params.require(:watchlist).permit(:user_id)
+      params.permit(:user_id)
     end
 end

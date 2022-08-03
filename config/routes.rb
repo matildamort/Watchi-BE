@@ -12,6 +12,10 @@ scope '/auth' do
     post "/logout", to: "users#logout"
 end
 
+scope '/list' do
+  get '/mylist', to: 'watchlists#getListID'
+end
+
 
 resources :users
 resources :shows
