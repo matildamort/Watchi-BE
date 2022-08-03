@@ -1,4 +1,5 @@
 class WatchshowsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_watchshow, only: [:show, :update, :destroy]
 
   # GET /watchshows
@@ -46,6 +47,6 @@ class WatchshowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def watchshow_params
-      params.require(:watchshow).permit(:show_id, :watchlist_id)
+      params.permit(:show_id, :watchlist_id)
     end
 end

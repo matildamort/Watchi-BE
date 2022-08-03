@@ -12,7 +12,7 @@ def create
     else
         auth_token = Knock::AuthToken.new payload: {sub: @user.id}
         print auth_token
-        render json: {username: @user.username, jwt: auth_token.token }, status: :created
+        render json: {username: @user.username, jwt: auth_token.token, user_id: @user.id, admin: @user.admin}, status: :created
     end
 end
 
