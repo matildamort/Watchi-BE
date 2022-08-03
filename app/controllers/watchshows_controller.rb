@@ -25,6 +25,10 @@ class WatchshowsController < ApplicationController
     end
   end
 
+  def getListedShows
+    @list = Watchshow.find_by_watchlist_id(listID)
+    render json: @list
+  end
   # PATCH/PUT /watchshows/1
   def update
     if @watchshow.update(watchshow_params)

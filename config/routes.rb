@@ -14,6 +14,7 @@ end
 
 scope '/list' do
   get '/mylist', to: 'watchlists#getListID'
+  post '/myshows', to: 'watchshows#getListedShows'
 end
 
 
