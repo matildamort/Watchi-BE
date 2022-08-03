@@ -58,6 +58,5 @@ class ReviewsController < ApplicationController
         render json: {error: "You are not authorized to perform this action"}, status: :unauthorized
       end
     end
-  
 end
 
