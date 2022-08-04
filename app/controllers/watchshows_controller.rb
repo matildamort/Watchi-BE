@@ -26,8 +26,15 @@ class WatchshowsController < ApplicationController
   end
 
   def getListedShows
-    @list = Watchshow.find_by_watchlist_id(listID)
-    render json: @list
+    list = Array.new(Watchshow.where(watchlist_id: params[:listID]))
+    puts list
+    result = []
+    list.each do |item|
+      data = Show.find(item.show_id)
+      fullData = ShowSerializer.new(data).serializable_hash[:data][:attributes]
+      result.push(fullData)
+    end
+    render json: result
   end
   # PATCH/PUT /watchshows/1
   def update
