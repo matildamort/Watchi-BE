@@ -5,19 +5,25 @@ require 'rails_helper'
 # end
 
 
-Rspec.describe Review, type: :model do
+RSpec.describe Review, type: :model do
   it { should belong_to(:show) }
 end
 
+RSpec.describe Review, type: :model do
+  it { should belong_to(:user) }
+end
 
-Rspec.describe Review, type: :model do
+
+RSpec.describe Review, type: :model do
   it { should have_one(:user) }
 end
 
 
-Rspec.describe Review, type: :model do
+RSpec.describe Review, type: :model do
   it { should allow_destroy_by(:admin) }
 end
+
+
 
 
 
