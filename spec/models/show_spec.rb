@@ -8,15 +8,17 @@ RSpec.describe Show, type: :model do
   it { should have_many(:reviews) }
   it { should have_one_attached(:picture) }
 end
-end
 
 
 RSpec.describe Show, type: :model do
-  it { should allow_destroy_by(:admin) }
+  it { should have_db_column(:title).of_type(:string) }
+  it { should have_db_column(:description).of_type(:string) }
+
 end
 
-
-
+RSpec.describe Show, type: :model do
+  it {should have_many(:reviews)}
+end
 
 
     

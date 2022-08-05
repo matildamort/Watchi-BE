@@ -45,10 +45,10 @@ class WatchshowsController < ApplicationController
     end
   end
 
-  # DELETE /watchshows/1
-  def destroy
-    @watchshow.destroy
-  end
+  # DELETE /watchshows/1 #not used in this version of the app
+  # def destroy
+  #   @watchshow.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
