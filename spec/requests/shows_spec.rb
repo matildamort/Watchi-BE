@@ -125,3 +125,13 @@ RSpec.describe "/shows", type: :request do
     end
   end
 end
+
+describe 'POST /shows' do
+  it 'creates a new show' do
+    post '/shows', params: { show: { title: 'DBZ',
+                                     description: 'A show about dragons',
+                                     picture: fixture_file_upload('/images/game_of_thrones.jpg', 'image/jpg') } }
+    expect(response).to have_http_status(:created)
+    expect(Show.last.title).to eq('DBZ')
+  end
+end

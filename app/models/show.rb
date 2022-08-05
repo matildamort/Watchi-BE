@@ -1,6 +1,7 @@
 class Show < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_one_attached :picture
+    # belongs_to :watchshows, dependent: :destroy
     # has_many :watchlists, dependent: :destroy
    
     
