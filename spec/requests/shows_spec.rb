@@ -32,106 +32,123 @@ RSpec.describe "/shows", type: :request do
     {}
   }
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      Show.create! valid_attributes
-      get shows_url, headers: valid_headers, as: :json
-      expect(response).to be_successful
-    end
+  # describe "GET /index" do
+  #   it "renders a successful response" do
+  #     Show.create! valid_attributes
+  #     get shows_url, headers: valid_headers, as: :json
+  #     expect(response).to be_successful
+  #   end
+  # end
+
+  # describe "GET /show" do
+  #   it "renders a successful response" do
+  #     show = Show.create! valid_attributes
+  #     get show_url(show), as: :json
+  #     expect(response).to be_successful
+  #   end
+  # end
+
+  # describe "POST /create" do
+  #   context "with valid parameters" do
+  #     it "creates a new Show" do
+  #       expect {
+  #         post shows_url,
+  #              params: { show: valid_attributes }, headers: valid_headers, as: :json
+  #       }.to change(Show, :count).by(1)
+  #     end
+
+  #     it "renders a JSON response with the new show" do
+  #       post shows_url,
+  #            params: { show: valid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:created)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+
+  #   context "with invalid parameters" do
+  #     it "does not create a new Show" do
+  #       expect {
+  #         post shows_url,
+  #              params: { show: invalid_attributes }, as: :json
+  #       }.to change(Show, :count).by(0)
+  #     end
+
+  #     it "renders a JSON response with errors for the new show" do
+  #       post shows_url,
+  #            params: { show: invalid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:unprocessable_entity)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+  # end
+
+  # describe "PATCH /update" do
+  #   context "with valid parameters" do
+  #     let(:new_attributes) {
+  #       skip("Add a hash of attributes valid for your model")
+  #     }
+
+  #     it "updates the requested show" do
+  #       show = Show.create! valid_attributes
+  #       patch show_url(show),
+  #             params: { show: new_attributes }, headers: valid_headers, as: :json
+  #       show.reload
+  #       skip("Add assertions for updated state")
+  #     end
+
+  #     it "renders a JSON response with the show" do
+  #       show = Show.create! valid_attributes
+  #       patch show_url(show),
+  #             params: { show: new_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:ok)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+
+  #   context "with invalid parameters" do
+  #     it "renders a JSON response with errors for the show" do
+  #       show = Show.create! valid_attributes
+  #       patch show_url(show),
+  #             params: { show: invalid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:unprocessable_entity)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+  # end
+
+  # describe "DELETE /destroy" do
+  #   it "destroys the requested show" do
+  #     show = Show.create! valid_attributes
+  #     expect {
+  #       delete show_url(show), headers: valid_headers, as: :json
+  #     }.to change(Show, :count).by(-1)
+  #   end
+  # end
+
+  before(:each) do
+    FactoryBot.create(:show, title: "DBZ")
+    FactoryBot.create(:show, title: "Naruto")
+    FactoryBot.create(:show, title: "Dragon Ball")
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      show = Show.create! valid_attributes
-      get show_url(show), as: :json
-      expect(response).to be_successful
-    end
-  end
-
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Show" do
-        expect {
-          post shows_url,
-               params: { show: valid_attributes }, headers: valid_headers, as: :json
-        }.to change(Show, :count).by(1)
-      end
-
-      it "renders a JSON response with the new show" do
-        post shows_url,
-             params: { show: valid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "does not create a new Show" do
-        expect {
-          post shows_url,
-               params: { show: invalid_attributes }, as: :json
-        }.to change(Show, :count).by(0)
-      end
-
-      it "renders a JSON response with errors for the new show" do
-        post shows_url,
-             params: { show: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-  end
-
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested show" do
-        show = Show.create! valid_attributes
-        patch show_url(show),
-              params: { show: new_attributes }, headers: valid_headers, as: :json
-        show.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "renders a JSON response with the show" do
-        show = Show.create! valid_attributes
-        patch show_url(show),
-              params: { show: new_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a JSON response with errors for the show" do
-        show = Show.create! valid_attributes
-        patch show_url(show),
-              params: { show: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-  end
-
-  describe "DELETE /destroy" do
-    it "destroys the requested show" do
-      show = Show.create! valid_attributes
-      expect {
-        delete show_url(show), headers: valid_headers, as: :json
-      }.to change(Show, :count).by(-1)
-    end
+describe "GET all shows at /shows" do
+  it "returns all shows" do
+    get "/shows"
+    print response
+    expect(response).to have_http_status(200)
+    expect(JSON.parse(response.body).size).to eq(3)
   end
 end
 
-describe 'POST /shows' do
-  it 'creates a new show' do
-    post '/shows', params: { show: { title: 'DBZ',
-                                     description: 'A show about dragons',
-                                     picture: fixture_file_upload('/images/game_of_thrones.jpg', 'image/jpg') } }
-    expect(response).to have_http_status(:created)
-    expect(Show.last.title).to eq('DBZ')
-  end
+# describe "GET show /shows/:id" do
+#   it "returns message based on param" do
+#     get "/shows/1"
+#     # expect(response).to have_http_status(:sucess)
+#     expect(response.body).to include("DBZ")
+#   end
+# end
+
+
+
+
 end

@@ -27,6 +27,7 @@ end
     end
 
 
+    # logs in user if credentials are correct
     def login
         @user = User.find_by_email(params[:email])
         if @user && @user.authenticate(params[:password])
@@ -39,13 +40,14 @@ end
         end
     end
 
+    #not being used in this version of the app
+    # def destroy
+    #     @user = User.find(params[:id])
+    #     @user.destroy
+    #     render json: {message: "User deleted"}, status: :ok
+    # end
 
-    def destroy
-        @user = User.find(params[:id])
-        @user.destroy
-        render json: {message: "User deleted"}, status: :ok
-    end
-
+    #Signout is handled in front end using session storage
     # def signout
     #     render json: {message: "You have been signed out"}, status: :ok
     # end

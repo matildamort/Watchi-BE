@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :show do
     title { "MyString" }
     description { "MyString" }
-    crunchroll { false }
+    crunchyroll { false }
     netflix { false }
     funimation { false }
     episodes { 1 }

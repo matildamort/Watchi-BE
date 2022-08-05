@@ -32,96 +32,112 @@ RSpec.describe "/watchshows", type: :request do
     {}
   }
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      Watchshow.create! valid_attributes
-      get watchshows_url, headers: valid_headers, as: :json
-      expect(response).to be_successful
-    end
+  # describe "GET /index" do
+  #   it "renders a successful response" do
+  #     Watchshow.create! valid_attributes
+  #     get watchshows_url, headers: valid_headers, as: :json
+  #     expect(response).to be_successful
+  #   end
+  # end
+
+  # describe "GET /show" do
+  #   it "renders a successful response" do
+  #     watchshow = Watchshow.create! valid_attributes
+  #     get watchshow_url(watchshow), as: :json
+  #     expect(response).to be_successful
+  #   end
+  # end
+
+  # describe "POST /create" do
+  #   context "with valid parameters" do
+  #     it "creates a new Watchshow" do
+  #       expect {
+  #         post watchshows_url,
+  #              params: { watchshow: valid_attributes }, headers: valid_headers, as: :json
+  #       }.to change(Watchshow, :count).by(1)
+  #     end
+
+  #     it "renders a JSON response with the new watchshow" do
+  #       post watchshows_url,
+  #            params: { watchshow: valid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:created)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+
+  #   context "with invalid parameters" do
+  #     it "does not create a new Watchshow" do
+  #       expect {
+  #         post watchshows_url,
+  #              params: { watchshow: invalid_attributes }, as: :json
+  #       }.to change(Watchshow, :count).by(0)
+  #     end
+
+  #     it "renders a JSON response with errors for the new watchshow" do
+  #       post watchshows_url,
+  #            params: { watchshow: invalid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:unprocessable_entity)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+  # end
+
+  # describe "PATCH /update" do
+  #   context "with valid parameters" do
+  #     let(:new_attributes) {
+  #       skip("Add a hash of attributes valid for your model")
+  #     }
+
+  #     it "updates the requested watchshow" do
+  #       watchshow = Watchshow.create! valid_attributes
+  #       patch watchshow_url(watchshow),
+  #             params: { watchshow: new_attributes }, headers: valid_headers, as: :json
+  #       watchshow.reload
+  #       skip("Add assertions for updated state")
+  #     end
+
+  #     it "renders a JSON response with the watchshow" do
+  #       watchshow = Watchshow.create! valid_attributes
+  #       patch watchshow_url(watchshow),
+  #             params: { watchshow: new_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:ok)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+
+  #   context "with invalid parameters" do
+  #     it "renders a JSON response with errors for the watchshow" do
+  #       watchshow = Watchshow.create! valid_attributes
+  #       patch watchshow_url(watchshow),
+  #             params: { watchshow: invalid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:unprocessable_entity)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+  # end
+
+  # describe "DELETE /destroy" do
+  #   it "destroys the requested watchshow" do
+  #     watchshow = Watchshow.create! valid_attributes
+  #     expect {
+  #       delete watchshow_url(watchshow), headers: valid_headers, as: :json
+  #     }.to change(Watchshow, :count).by(-1)
+  #   end
+  # end
+
+
+  before(:each) do
+    FactoryBot.create(:show, title: "DBZ")
+    FactoryBot.create(:user, email: "Matilda@email.com", password: '123456', password_confirmation: '123456')
+    FactoryBot.create(:watchlist, user_id: '1' )
+    FactoryBot.create(:watchshow, show_id: '1', watchlist_id: '1')
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      watchshow = Watchshow.create! valid_attributes
-      get watchshow_url(watchshow), as: :json
-      expect(response).to be_successful
-    end
-  end
-
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Watchshow" do
-        expect {
-          post watchshows_url,
-               params: { watchshow: valid_attributes }, headers: valid_headers, as: :json
-        }.to change(Watchshow, :count).by(1)
-      end
-
-      it "renders a JSON response with the new watchshow" do
-        post watchshows_url,
-             params: { watchshow: valid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "does not create a new Watchshow" do
-        expect {
-          post watchshows_url,
-               params: { watchshow: invalid_attributes }, as: :json
-        }.to change(Watchshow, :count).by(0)
-      end
-
-      it "renders a JSON response with errors for the new watchshow" do
-        post watchshows_url,
-             params: { watchshow: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-  end
-
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested watchshow" do
-        watchshow = Watchshow.create! valid_attributes
-        patch watchshow_url(watchshow),
-              params: { watchshow: new_attributes }, headers: valid_headers, as: :json
-        watchshow.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "renders a JSON response with the watchshow" do
-        watchshow = Watchshow.create! valid_attributes
-        patch watchshow_url(watchshow),
-              params: { watchshow: new_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a JSON response with errors for the watchshow" do
-        watchshow = Watchshow.create! valid_attributes
-        patch watchshow_url(watchshow),
-              params: { watchshow: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-  end
-
-  describe "DELETE /destroy" do
-    it "destroys the requested watchshow" do
-      watchshow = Watchshow.create! valid_attributes
-      expect {
-        delete watchshow_url(watchshow), headers: valid_headers, as: :json
-      }.to change(Watchshow, :count).by(-1)
+  describe "GET all watchshows at /watchshows" do
+    it "returns all watchshows" do
+      get "/watchshows"
+      print response
+      expect(response).to have_http_status(200)
     end
   end
 end

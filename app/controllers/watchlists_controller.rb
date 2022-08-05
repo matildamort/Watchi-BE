@@ -25,18 +25,20 @@ class WatchlistsController < ApplicationController
   end
 
   # PATCH/PUT /watchlists/1
-  def update
-    if @watchlist.update(watchlist_params)
-      render json: @watchlist
-    else
-      render json: @watchlist.errors, status: :unprocessable_entity
-    end
-  end
+  # not being used in this version
+  # def update
+  #   if @watchlist.update(watchlist_params)
+  #     render json: @watchlist
+  #   else
+  #     render json: @watchlist.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /watchlists/1
-  def destroy
-    @watchlist.destroy
-  end
+  # not being used in this version - should only used upon destroy of a user, should not be used in other circumstances
+  # def destroy
+  #   @watchlist.destroy
+  # end
 
   def getListID
     @list = Watchlist.find_by_user_id(current_user.id)
