@@ -44,6 +44,7 @@ class ShowsController < ApplicationController
     @show.destroy
   end
 
+  #destroy all shows
   def destroy
     @show = Show.find(params[:id])
     @show.destroy

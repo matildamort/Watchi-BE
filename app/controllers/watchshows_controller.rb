@@ -25,6 +25,7 @@ class WatchshowsController < ApplicationController
     end
   end
 
+  #puts all watchlist details in the database into an array and renders them
   def getListedShows
     list = Array.new(Watchshow.where(watchlist_id: params[:listID]))
     puts list

@@ -40,11 +40,13 @@ class WatchlistsController < ApplicationController
   #   @watchlist.destroy
   # end
 
+  #allocate a user to a watchlist
   def getListID
     @list = Watchlist.find_by_user_id(current_user.id)
     render json: @list.id
   end
 
+  #adds a show to the list
   def add_watchshow
     @watchlist = Watchlist.find(params[:id])
     @watchshow = Watchshow.find(params[:watchshow_id])
@@ -52,6 +54,7 @@ class WatchlistsController < ApplicationController
     render json: @watchlist
   end
 
+  #removes a show from the list
   def remove_watchshow
     @watchlist = Watchlist.find(params[:id])
     @watchshow = Watchshow.find(params[:watchshow_id])

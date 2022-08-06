@@ -51,6 +51,7 @@ class ReviewsController < ApplicationController
       params.permit(:message, :rating, :user_id, :show_id)
     end
 
+    # Checks if the user is the owner of the review or an admin
     def auth_check
       if current_user.admin or current_user.id == params[:user_id]
         return true

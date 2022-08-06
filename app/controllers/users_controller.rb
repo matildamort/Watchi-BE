@@ -17,6 +17,7 @@ def create
     end
 end
 
+
 def index
     @users = User.all
     render json: @users
@@ -54,6 +55,7 @@ end
     # end
 
     private
+    #Details params for users
     def user_params
         params.permit(:username, :firstname, :lastname, :email, :password, :password_confirmation)
     end

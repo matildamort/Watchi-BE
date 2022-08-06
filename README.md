@@ -118,6 +118,11 @@ After second round of reviews it was highlighted that some functionality based o
 - Create clear segregation between each section and adjust general spacing. e.g ensure that the view show section is separated from the initial 
 
 
+### Final wireframes after testing and user feedback
+![WF-High](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Final-Coded-wireframe%20.png)
+
+
+
 
 ### High-res (additional missed wireframes)
 ![WF-High-Missed](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Grouped-wireframes-missed.png)
