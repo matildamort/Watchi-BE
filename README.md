@@ -145,3 +145,9 @@ After second round of reviews it was highlighted that some functionality based o
 
 ### To ensure clear priorities, a color coding system was discussed and implemented.
 ![Trello-5](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-5.png)
+
+## Testing
+
+[Testing files](https://docs.google.com/spreadsheets/d/1Ua9nDSVtvbguL8yDjVT1BNYwWY65deT5Zk5IL9F_8JU/edit?usp=sharing )
+
+
