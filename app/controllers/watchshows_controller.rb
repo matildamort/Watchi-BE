@@ -1,6 +1,7 @@
 class WatchshowsController < ApplicationController
   before_action :authenticate_user
   before_action :set_watchshow, only: [:show, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /watchshows
   def index
@@ -17,7 +18,6 @@ class WatchshowsController < ApplicationController
   # POST /watchshows
   def create
     @watchshow = Watchshow.create(watchshow_params)
-
     if @watchshow.save
       render json: @watchshow, status: :created, location: @watchshow
     else
@@ -36,6 +36,7 @@ class WatchshowsController < ApplicationController
     end
     render json: result
   end
+
   # PATCH/PUT /watchshows/1
   def update
     if @watchshow.update(watchshow_params)
