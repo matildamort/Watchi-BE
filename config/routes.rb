@@ -22,4 +22,5 @@ resources :users
 resources :shows
 resources :reviews
 resources :watchlists
+resources :watchshows
 end
