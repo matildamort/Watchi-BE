@@ -1,9 +1,5 @@
-# Watchi
-
-
-
 ## When you miss your favourite show and everyone spoilers it!
-![Trello-1](docs/Sad-Pika.gif)
+![Trello-1](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Sad-Pika.gif)
 
 This app is designed for the Hardcore Anime lovers, the ones who have 'seen it all' and are 'not so patiently' waiting for the next eps to come out. This platform helps with tracking when their favourite shows are being released so they never miss an ep and have upcoming shows scheduled on their 'my weekly watchlist' 
 
@@ -24,9 +20,9 @@ After going to both team members groups of friends and asking what they would li
 
 
 
-![Target-aud](docs/Matilda.png)
-![Target-aud](docs/Cam.png)
-![Target-aud](docs/Akihiro.png)
+![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Matilda.png)
+![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Cam.png)
+![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Akihiro.png)
 
 
 ## Tech stack
@@ -57,13 +53,13 @@ After going to both team members groups of friends and asking what they would li
 </div>
 
 ## ERD
-![ERD](docs/ERD-1.jpg)
+![ERD](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/ERD-1.jpg)
 
 ## Dataflow Diagram
 
 ## Application Architecture Diagram
 
-![AAD](docs/ApplicationArchitecture.jpeg)
+![AAD](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/ApplicationArchitecture.jpeg)
 
 ## User Stories
 
@@ -99,8 +95,8 @@ Change to inital User flows
 [![Image showing video to watch ](docs/Youtube-link.png)](https://youtu.be/6ByDqdx9syU)
 
 
-### Initial Low-Res [Full-exported-artboards](docs/Low-res-wireframes)
-![WF-Low](docs/Low-res-wireframes/low-res-all.png)
+### Initial Low-Res [Full-exported-artboards](https://github.com/matildamort/T3A2---Part-A/tree/main/docs/Low-res-wireframes)
+![WF-Low](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Low-res-wireframes/low-res-all.png)
 
 #### After initial meeting with the client and gathering initial feedback they have requested
 - The addition of the ability for a guest to view what a weekly watchlist would look like so they have an understanding of how the platform works.
@@ -113,8 +109,8 @@ Change to inital User flows
 
 
 
-### High-res [Full-exported-artboards](docs/High-res-wireframes)
-![WF-High](docs/Grouped-wireframes.png)
+### High-res [Full-exported-artboards](https://github.com/matildamort/T3A2---Part-A/tree/main/docs/High-res-wireframes)
+![WF-High](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Grouped-wireframes.png)
 
 After second round of reviews it was highlighted that some functionality based off the user stories were not outlined in the Wireframes
 - Client requested the ability for user to see their account details and delete their account to allow user autonomy. Additional wireframe for account was created and ability to see this in the 
@@ -124,7 +120,7 @@ After second round of reviews it was highlighted that some functionality based o
 
 
 ### High-res (additional missed wireframes)
-![WF-High-Missed](docs/Grouped-wireframes-missed.png)
+![WF-High-Missed](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Grouped-wireframes-missed.png)
 
 ## Project Management
 
@@ -132,23 +128,25 @@ After second round of reviews it was highlighted that some functionality based o
 
 #### To start our project we first set up standard rubric requirements in Trello and started basic admin work e.g Github Repo before we brainstormed on some key concepts or interests of both people to determine a product. 
 
-![Trello-1](docs/Trello-boards/Trello-1.png)
+![Trello-1](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-1.png)
 
 #### After this we spent half a day whiteboarding wireframes and concepts for a minimum viable product and started basic wireframes. Wireframes were done together so everyone understood the final product and agreed on outcomes. 
 
-![Trello-2](docs/Trello-boards/Trello-2.png)
+![Trello-2](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-2.png)
 
 ### After the initial concept was ready to go, we split up the additional tasks based on strengths and interests of each person. 
 
-![Trello-3](docs/Trello-boards/Trello-3.png)
+![Trello-3](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-3.png)
 
 ### Regular communication was a key feature and ensuring we each knew what the other was working on. We have daily standups and regular check-ins. The inital plan was to work on both the BE and FE together; with one person overly responsible for BE as a smaller task and existing knowledge, this allows for both team members to work sooner on the FE together and split up tasks.
 
-![Trello-4](docs/Trello-boards/Trello-4.png)
+![Trello-4](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-4.png)
 
 
 ### To ensure clear priorities, a color coding system was discussed and implemented.
-![Trello-5](docs/Trello-boards/Trello-5.png)
+![Trello-5](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-5.png)
+
+
 
 ## Building the Application
 
@@ -173,6 +171,8 @@ Some of the other challenges that we were faced with included:
 During the development process, we needed to adjust the scope of the project as some parts of the initial concept such as google account integration seemed a bit too ambitious to get completed within the time frame, so things like that were moved to the list of features that could be implemented after the assessment period.
 
 ### Testing
+
+[Testing files](https://docs.google.com/spreadsheets/d/1Ua9nDSVtvbguL8yDjVT1BNYwWY65deT5Zk5IL9F_8JU/edit?usp=sharing )
 
 For testing our application, we setup different environments, for deployment, production, and testing. We made sure that the features implemented work as expected across all three environments. We also did extensive manual testing on the application in order to help iron out errors in the functionality of the application that would go unnoticed whilst writing the code.
 

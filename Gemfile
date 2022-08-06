@@ -47,7 +47,5 @@ gem 'aws-sdk-s3'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'image_processing'
-
 gem "jsonapi-serializer", "~> 2.2"
-
 gem "shoulda", "~> 4.0"
