@@ -1,7 +1,7 @@
 class WatchshowsController < ApplicationController
   before_action :authenticate_user
   before_action :set_watchshow, only: [:show, :update, :destroy]
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   # GET /watchshows
   def index
