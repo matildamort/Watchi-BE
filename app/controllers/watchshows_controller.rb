@@ -16,7 +16,7 @@ class WatchshowsController < ApplicationController
 
   # POST /watchshows
   def create
-    @watchshow = Watchshow.new(watchshow_params)
+    @watchshow = Watchshow.create(watchshow_params)
 
     if @watchshow.save
       render json: @watchshow, status: :created, location: @watchshow
