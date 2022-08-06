@@ -2,6 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
   host: 'https://watchi-au.netlify.app/'
+
 }
 
 Rails.application.configure do

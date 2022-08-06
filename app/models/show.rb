@@ -4,8 +4,6 @@ class Show < ApplicationRecord
     # belongs_to :watchshows, dependent: :destroy
     # has_many :watchlists, through: :watchshows, dependent: :destroy
    
-    
-
     def picture_url
         Rails.application.routes.url_helpers.url_for(picture) if picture.attached?
     end
