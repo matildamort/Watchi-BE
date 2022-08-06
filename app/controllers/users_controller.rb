@@ -9,6 +9,8 @@ def create
 
     if @user.errors.any?
         render json: @user.errors, status: :unprocessable_entity
+        alert: "Please check details and try again"
+
     else
         auth_token = Knock::AuthToken.new payload: {sub: @user.id}
         print auth_token
