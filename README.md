@@ -1,5 +1,9 @@
+# Watchi
+
+
+
 ## When you miss your favourite show and everyone spoilers it!
-![Trello-1](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Sad-Pika.gif)
+![Trello-1](docs/Sad-Pika.gif)
 
 This app is designed for the Hardcore Anime lovers, the ones who have 'seen it all' and are 'not so patiently' waiting for the next eps to come out. This platform helps with tracking when their favourite shows are being released so they never miss an ep and have upcoming shows scheduled on their 'my weekly watchlist' 
 
@@ -20,9 +24,9 @@ After going to both team members groups of friends and asking what they would li
 
 
 
-![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Matilda.png)
-![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Cam.png)
-![Target-aud](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Akihiro.png)
+![Target-aud](docs/Matilda.png)
+![Target-aud](docs/Cam.png)
+![Target-aud](docs/Akihiro.png)
 
 
 ## Tech stack
@@ -53,13 +57,13 @@ After going to both team members groups of friends and asking what they would li
 </div>
 
 ## ERD
-![ERD](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/ERD-1.jpg)
+![ERD](docs/ERD-1.jpg)
 
 ## Dataflow Diagram
 
 ## Application Architecture Diagram
 
-![AAD](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/ApplicationArchitecture.jpeg)
+![AAD](docs/ApplicationArchitecture.jpeg)
 
 ## User Stories
 
@@ -95,8 +99,8 @@ Change to inital User flows
 [![Image showing video to watch ](docs/Youtube-link.png)](https://youtu.be/6ByDqdx9syU)
 
 
-### Initial Low-Res [Full-exported-artboards](https://github.com/matildamort/T3A2---Part-A/tree/main/docs/Low-res-wireframes)
-![WF-Low](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Low-res-wireframes/low-res-all.png)
+### Initial Low-Res [Full-exported-artboards](docs/Low-res-wireframes)
+![WF-Low](docs/Low-res-wireframes/low-res-all.png)
 
 #### After initial meeting with the client and gathering initial feedback they have requested
 - The addition of the ability for a guest to view what a weekly watchlist would look like so they have an understanding of how the platform works.
@@ -109,8 +113,8 @@ Change to inital User flows
 
 
 
-### High-res [Full-exported-artboards](https://github.com/matildamort/T3A2---Part-A/tree/main/docs/High-res-wireframes)
-![WF-High](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Grouped-wireframes.png)
+### High-res [Full-exported-artboards](docs/High-res-wireframes)
+![WF-High](docs/Grouped-wireframes.png)
 
 After second round of reviews it was highlighted that some functionality based off the user stories were not outlined in the Wireframes
 - Client requested the ability for user to see their account details and delete their account to allow user autonomy. Additional wireframe for account was created and ability to see this in the 
@@ -118,14 +122,9 @@ After second round of reviews it was highlighted that some functionality based o
 - Create clear segregation between each section and adjust general spacing. e.g ensure that the view show section is separated from the initial 
 
 
-### Final wireframes after testing and user feedback
-![WF-High](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Final-Coded-wireframe%20.png)
-
-
-
 
 ### High-res (additional missed wireframes)
-![WF-High-Missed](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Grouped-wireframes-missed.png)
+![WF-High-Missed](docs/Grouped-wireframes-missed.png)
 
 ## Project Management
 
@@ -133,26 +132,82 @@ After second round of reviews it was highlighted that some functionality based o
 
 #### To start our project we first set up standard rubric requirements in Trello and started basic admin work e.g Github Repo before we brainstormed on some key concepts or interests of both people to determine a product. 
 
-![Trello-1](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-1.png)
+![Trello-1](docs/Trello-boards/Trello-1.png)
 
 #### After this we spent half a day whiteboarding wireframes and concepts for a minimum viable product and started basic wireframes. Wireframes were done together so everyone understood the final product and agreed on outcomes. 
 
-![Trello-2](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-2.png)
+![Trello-2](docs/Trello-boards/Trello-2.png)
 
 ### After the initial concept was ready to go, we split up the additional tasks based on strengths and interests of each person. 
 
-![Trello-3](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-3.png)
+![Trello-3](docs/Trello-boards/Trello-3.png)
 
 ### Regular communication was a key feature and ensuring we each knew what the other was working on. We have daily standups and regular check-ins. The inital plan was to work on both the BE and FE together; with one person overly responsible for BE as a smaller task and existing knowledge, this allows for both team members to work sooner on the FE together and split up tasks.
 
-![Trello-4](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-4.png)
+![Trello-4](docs/Trello-boards/Trello-4.png)
 
 
 ### To ensure clear priorities, a color coding system was discussed and implemented.
-![Trello-5](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Trello-boards/Trello-5.png)
+![Trello-5](docs/Trello-boards/Trello-5.png)
 
-## Testing
+## Building the Application
 
-[Testing files](https://docs.google.com/spreadsheets/d/1Ua9nDSVtvbguL8yDjVT1BNYwWY65deT5Zk5IL9F_8JU/edit?usp=sharing )
+After coming up with the initial concept of the application, we shared the idea to our friends to see what they thought of it. Since the target audience of our application is for people who like to watch anime, and also have a busy schedule, or often forget when their favourite anime is being aired, this idea filled a niche that can help make people's lives easier.
 
+We spent roughly 2 weeks planning out how the application will look and function, including designing the database and figuring out the way data flows through the application. Once this initial planning was done, Cameron setup the initial GitHub repo for the frontend which is built with react, and Matilda setup the initial GitHub repo for the backend which is constructed using Ruby on Rails.
 
+We used agile project management methodologies to track our sprints, and also adjusted the scope as necessary in order to meet the requirements of the MVP for this assessment. We utilized Trello to create lists of different tasks that needed to be done. These tasks were then assigned to the person responsible for that part of the app, and had checklists of requirements, and deadlines that said tasks needed to be completed by in order for the sprints to be completed on time. Anything that felt like it was outside of the scope of completing within the timeframe of the assessment was then moved into a non-mvp category that will eventually get built in the future when both of us are able to work on the project more after the assessment period.
+
+### Challenges
+
+We encountered numerous challenges during the process of building this assessment, one of the biggest being getting the integration of the frontend to work seamlessly with the backend as we would get one part of the integration working, and then another part would break. Fortunately, we were able to overcome this challenge and it also provided a good learning experience that both of us will take with us in the future.
+
+Some of the other challenges that we were faced with included:
+
+<li> CRUD operations to operate from the frontend correctly</li>
+<li> Get and Post requests from the frontend to return correct data without errors from the backend</li>
+<li> Getting the watchlists to work properly</li>
+
+### Scope
+
+During the development process, we needed to adjust the scope of the project as some parts of the initial concept such as google account integration seemed a bit too ambitious to get completed within the time frame, so things like that were moved to the list of features that could be implemented after the assessment period.
+
+### Testing
+
+For testing our application, we setup different environments, for deployment, production, and testing. We made sure that the features implemented work as expected across all three environments. We also did extensive manual testing on the application in order to help iron out errors in the functionality of the application that would go unnoticed whilst writing the code.
+
+We also utilized testing libraries such as RSpec for the backend to ensure that models and controllers were functioning successfully, as well as using the react-testing-framework library for basic rendering and styling tests for the front end to ensure components were rendered correctly.
+
+We also got friends to use the live website to gather feedback about how the app feels to use on the live deployed version which was very helpful for changing things around to increase the user experience such as adding the ability to add shows to your watchlist from the homepage.
+
+### Libraries Used
+
+##### React
+
+Even though that entire frontend is built with React as if it were a framework, it is still a library by nature. Using React to build the frontend made things so much simpler being able to user powerful tools such as hooks to manage the state of several components. React also made the application easy to structure and render with it's component-based rendering design and DOM manipulation.
+
+##### Material UI
+
+We used Material UI throughout this application in order to flesh out professional looking components with advanced functionality and is also easily customizable. We incorporate Material UI into our styled components global styles file to ensure everything was in one place, and worked flawlessly.
+
+Some of the components used form MaterialUI included the drawer used for the navbar when the application was being rendered with the width of a mobile device. We also used it to easily create components such as the card that are used to display the shows on both the homepage, and watchlist page.
+
+##### Axios
+
+Axios was used in this application to handle all of the HTTP requests between the frontend and the backend. Using axios made things much simpler instead of having to manually write out each request to the backend for every function. Instead, we were able to store all of the request methods into functions that could be imported into any component within the app for ease of use.
+
+##### Knock
+
+We used Knock on the backend to handle user authentication through the use of JSON Web Tokens that are created and passed to the frontend to enable the app to successfully make HTTP requests.
+
+##### Styled Components
+
+Styled components was used for the styling of the application. We chose to use the global styles method to have all styling in one place that is easily rendered across the entire application. The main reason for choosing styled components was how easily Material UI integrates with it.
+
+### What went well
+
+While we definitely faced some challenges during this project, we also learnt an incredible amount. It was really a rewarding achievement being able to work as a solid team throughout the entire project both planning and development stages. We kept communications open constantly throughout the entire project to ensure that we were working as efficient as we possibly could. We helped each other both with building different parts of the application, but also keeping each other sane when we got stuck on things and needed a break, or if things felt overwhelming.
+
+### What we learnt
+
+Firstly, we learnt that we work really well as a team, and plan to hopefully work on more projects together in the future after Coder Academy. We also learnt that collaborating with other people on projects is an amazing way to help each other improve in areas that we weren't confident in. We are both proud of the product, and we have been able to gain a good idea of how to improve the application further in the future and make it more solid.
