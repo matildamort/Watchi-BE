@@ -1,7 +1,7 @@
 class Show < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_one_attached :picture
-    # has_many :watchshows, optional: true, dependent: :destroy
+    has_many :watchshows, optional: true, dependent: :destroy
     # has_many :watchlists, through: :watchshows, dependent: :destroy
    
     def picture_url
