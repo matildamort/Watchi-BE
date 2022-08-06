@@ -45,7 +45,7 @@ class WatchshowsController < ApplicationController
     end
   end
 
-  DELETE /watchshows/1 #not used in this version of the app
+  # DELETE /watchshows/1 #not used in this version of the app
   def destroy
     @watchshow.destroy
   end
